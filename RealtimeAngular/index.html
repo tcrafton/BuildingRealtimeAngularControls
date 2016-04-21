@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Gauge Test</title>
+    <script src="Scripts/jquery-2.2.3.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+
+    <!--Custom JavaScript-->
+    <script src="ext-modules/psGauge/psGaugeModule.js"></script>
+    <script src="ext-modules/psGauge/psGaugeDirective.js"></script>
+    <script src="app/appModule.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script>
+        google.load('visualization', '1.0', { 'packages': ['gauge'] });
+        google.setOnLoadCallback(function () {
+            angular.bootstrap(document, ['app']);
+        });
+    </script>
+
+</head>
+<body>
+    <h1>Guage Test</h1>
+    <ps-gauge></ps-gauge>
+</body>
+</html>
