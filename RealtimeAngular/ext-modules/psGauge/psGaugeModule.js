@@ -1,3 +1,3 @@
 ﻿'use strict';
 
-angular.module('psGauge', []);
+angular.module('psGauge', ['psWebMetricsService']);
