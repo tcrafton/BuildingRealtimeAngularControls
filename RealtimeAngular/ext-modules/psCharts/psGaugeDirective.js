@@ -1,13 +1,13 @@
 ﻿'use strict';
 
-angular.module('psGauge').directive('psGauge',[
+angular.module('psCharts').directive('psCharts', [
     'psWebMetricsService',
     function (psWebMetricsService) {
         return {
             scope: {
                 metric: '@metric'
             },
-            templateUrl: 'ext-modules/psGauge/psGaugeTemplate.html',
+            templateUrl: 'ext-modules/psCharts/psGaugeTemplate.html',
             link: function (scope, el, attrs) {
 
                 scope.initialized = false;

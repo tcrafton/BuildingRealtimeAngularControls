@@ -28,7 +28,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
             }
         );
 
-        var getTitle = function (metric) {
+        var getTitleForMetric = function (metric) {
             switch (metric) {
                 case 'time':
                     return 'Time';
@@ -47,7 +47,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
         };
 
         return {
-            getTitle: getTitle
+            getTitleForMetric: getTitleForMetric
         };
     }
 ]);

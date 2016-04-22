@@ -26,21 +26,21 @@ namespace RealtimeAngular
             hub = GlobalHost.ConnectionManager.GetHubContext<MetricHub>();
 
             taskTimer = new Timer(OnTimerElapsed, null,
-                TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(.1));
+                TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1));
         }
 
         private void OnTimerElapsed(object sender)
         {
-            hub.Clients.All.broadcastMessage(DateTime.UtcNow.ToString(), bandwidthPct,
+            hub.Clients.All.broadcastMessage(DateTime.UtcNow.ToString(), bandwidthPct, 
                 cpuPct, salesAmt, alphaSalesAmt, betaSalesAmt);
 
             // update values
             Random r = new Random();
-            bandwidthPct += 15 * r.NextDouble() - 7.5;
+            bandwidthPct += 15*2 * r.NextDouble() - 6.5;
             if (bandwidthPct > 100) bandwidthPct = 100;
             if (bandwidthPct < 0) bandwidthPct = 0;
 
-            cpuPct += 15 * r.NextDouble() - 7.5;
+            cpuPct += 15*2 * r.NextDouble() - 7.5*1.8;
             if (cpuPct > 100) cpuPct = 100;
             if (cpuPct < 0) cpuPct = 0;
 
