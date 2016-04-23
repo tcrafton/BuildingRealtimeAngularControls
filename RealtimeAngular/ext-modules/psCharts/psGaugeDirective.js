@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-angular.module('psCharts').directive('psCharts', [
+angular.module('psCharts').directive('psGauge', [
     'psWebMetricsService',
     function (psWebMetricsService) {
         return {
@@ -17,7 +17,7 @@ angular.module('psCharts').directive('psCharts', [
                     redFrom: 90, redTo: 100,
                     yellowFrom: 75, yellowTo: 90,
                     minorTicks: 5
-                };           
+                };
 
                 scope.$on('psWebMetricsService-received-data-event', function (evt, data) {
 
@@ -30,10 +30,9 @@ angular.module('psCharts').directive('psCharts', [
                         scope.chart = new google.visualization.Gauge(el[0]);
                         scope.initialized = true;
                     }
-
                     scope.data.setValue(0, 1, Math.round(data[scope.metric]));
                     scope.chart.draw(scope.data, scope.options);
                 });
-        }
-    }
+            }
+        };
 }]);

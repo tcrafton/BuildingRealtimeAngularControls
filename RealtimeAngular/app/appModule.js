@@ -1,6 +1,7 @@
 ﻿'use strict';
 
-angular.module('app', ['psCharts', 'psWebMetricsService', 'psSecurityMonitorService']);
+angular.module('app', ['psCharts', 'psWebMetricsService', 'psBusTracker',
+                       'psTweetService']);
 
 angular.module('app').config(function ($provide) {
     $provide.decorator("$exceptionHandler", ["$delegate", function ($delegate) {

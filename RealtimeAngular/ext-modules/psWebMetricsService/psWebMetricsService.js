@@ -1,4 +1,4 @@
-﻿"use strict";
+﻿'use strict';
 
 angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
     '$rootScope',
@@ -16,7 +16,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
                     'cpuPct': cpuPct,
                     'salesAmt': salesAmt,
                     'alphaSalesAmt': alphaSalesAmt,
-                    'betaSalesAmt': betaSalesAmt
+                    'betaSalesAmt': betaSalesAmt,
                 });
 
         };
@@ -27,6 +27,24 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
                 alert(data);
             }
         );
+
+        var getTitle = function (metric) {
+            switch (metric) {
+                case 'time':
+                    return 'Time';
+                case 'bandwidthPct':
+                    return 'Bandwidth %';
+                case 'cpuPct':
+                    return 'CPU %';
+                case 'salesAmt':
+                    return 'Sales Amount';
+                case 'alphaSalesAmt':
+                    return 'Alpha Sales Amount';
+                case 'betaSalesAmt':
+                    return 'Beta Sales Amount';
+            }
+            return undefined;
+        };
 
         var getTitleForMetric = function (metric) {
             switch (metric) {
@@ -47,6 +65,7 @@ angular.module('psWebMetricsService', []).factory('psWebMetricsService', [
         };
 
         return {
+            getTitle: getTitle,
             getTitleForMetric: getTitleForMetric
         };
     }

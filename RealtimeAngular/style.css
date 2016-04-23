@@ -39,3 +39,30 @@ li {
 .non-error {
     background-color: green;
 }
+
+ps-bus-tracker {
+    display: inline-block;
+    min-width: 400px;
+    min-height: 400px;
+    background-color: red;
+}
+
+.ps-tweet-list {
+    width: 400px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    border: 1px solid #999;
+}
+
+.ps-twitter-image {
+    width: 32px;
+    height: 32px;
+}
+
+.ps-twitter-user {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 16px;
+}
+

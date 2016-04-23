@@ -1,26 +1,50 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Security Monitor Control Test</title>
+    <title>Tweet Filter</title>
     <link href="style.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.2.3.min.js"></script>
     <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
-    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular.js"></script>
     <script src="Scripts/socket.io.js"></script>
     <script src="signalr/hubs"></script>
 
-    <!--Custom JavaScript-->
     <script src="ext-modules/psWebMetricsService/psWebMetricsService.js"></script>
-    <script src="ext-modules/psSecurityMonitorSerivce/psSecurityMonitorService.js"></script>
     <script src="ext-modules/psCharts/psChartsModule.js"></script>
     <script src="ext-modules/psCharts/psGaugeDirective.js"></script>
     <script src="ext-modules/psCharts/psLineChartDirective.js"></script>
     <script src="ext-modules/psCharts/psCandlestickChartDirective.js"></script>
 
+    <script src="ext-modules/psBusTracker/psBusTrackerService.js"></script>
+    <script src="ext-modules/psBusTracker/psBusTrackerDirective.js"></script>
+
+    <script src="ext-modules/psTweetFilter/psTweetService.js"></script>
+    <script src="ext-modules/psTweetFilter/psTweetFilterDirective.js"></script>
+
     <script src="app/appModule.js"></script>
     <script src="app/appSecurityMonitorDirective.js"></script>
 
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6U2ExB8yLDc7RiGPYK3C3yIzDPpyFJE0&sensor=false"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.5/firebase.js"></script>
+
+    <!-- RSVP -->
+    <script src="Scripts/vendor/rsvp.min.js"></script>
+
+    <!-- GeoFire -->
+    <script src="Scripts/vendor/geofire.min.js"></script>
+
+    <!-- Lo-Dash -->
+    <script src="Scripts/vendor/lodash.min.js"></script>
+
+    <!-- PubNub -->
+    <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+
     <script>
         google.load('visualization', '1.0', { 'packages': ['corechart', 'gauge'] });
         google.setOnLoadCallback(function () {
@@ -29,8 +53,9 @@
     </script>
 
 </head>
+
 <body>
-    <h1>Security Monitor Test</h1>
-    <app-security-monitor></app-security-monitor>
+    <h1>Tweet Filter Test</h1>
+    <ps-tweet-filter filter="you"></ps-tweet-filter>
 </body>
 </html>

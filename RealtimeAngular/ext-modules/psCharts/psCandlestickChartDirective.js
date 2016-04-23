@@ -9,7 +9,7 @@ angular.module('psCharts').directive('psCandlestickChart', [
             },
             template: '',
             link: function (scope, el, attrs) {
-
+                
                 scope.options = {
                     width: 600,
                     height: 300,
@@ -97,7 +97,7 @@ angular.module('psCharts').directive('psCandlestickChart', [
 
                         // remove the row for the current period
                         if (scope.data.getNumberOfRows() > 1)
-                            scope.data.removeRow(scope.data.getNumberOfRows() - 1);
+                            scope.data.removeRow(scope.data.getNumberOfRows()-1);
                     }
 
                     // add the row for the current period
@@ -106,7 +106,7 @@ angular.module('psCharts').directive('psCandlestickChart', [
                         scope.period.firstValue,
                         scope.period.lastValue,
                         scope.period.highValue]);
-
+                    
                     // remove any data that scrolls off the chart
                     var rowCount = scope.data.getNumberOfRows();
                     if (rowCount > scope.periodsOnChart) {
@@ -117,10 +117,10 @@ angular.module('psCharts').directive('psCandlestickChart', [
 
                     // set the baseline properly
                     var newBaseline = new Date(scope.startTime);
-                    newBaseline.setSeconds(newBaseline.getSeconds() + (scope.periodsOnChart - 1) * scope.secondsPerPeriod);
+                    newBaseline.setSeconds(newBaseline.getSeconds() + (scope.periodsOnChart-1) * scope.secondsPerPeriod);
                     scope.options.hAxis.baseline = [newBaseline.getHours(),
                         newBaseline.getMinutes(),
-                        newBaseline.getSeconds()];
+                        newBaseline.getSeconds()]; 
 
                     // draw the chart now that options and data are set up
                     scope.chart.draw(scope.data, scope.options);

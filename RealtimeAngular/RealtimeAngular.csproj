@@ -83,7 +83,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ext-modules\psBusTracker\psBusTrackerDirective.js" />
+    <Content Include="ext-modules\psBusTracker\psBusTrackerService.js" />
+    <Content Include="ext-modules\psBusTracker\psBusTrackerTemplate.html" />
     <Content Include="ext-modules\psSecurityMonitorSerivce\psSecurityMonitorService.js" />
+    <Content Include="ext-modules\psTweetFilter\psTweetFilterDirective.js" />
+    <Content Include="ext-modules\psTweetFilter\psTweetFilterTemplate.html" />
+    <Content Include="ext-modules\psTweetFilter\psTweetService.js" />
     <Content Include="index.js" />
     <Content Include="package.json" />
     <None Include="Web.Debug.config">
@@ -115,6 +121,9 @@
     <Content Include="Scripts\jquery.signalR-2.2.0.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="Scripts\socket.io.js" />
+    <Content Include="Scripts\vendor\geofire.min.js" />
+    <Content Include="Scripts\vendor\lodash.min.js" />
+    <Content Include="Scripts\vendor\rsvp.min.js" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />

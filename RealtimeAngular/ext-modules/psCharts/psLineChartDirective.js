@@ -44,8 +44,8 @@ angular.module('psCharts').directive('psLineChart', [
                         scope.initialized = true;
                     }
                     var d = new Date(data.time);
-                    scope.data.addRow([[d.getHours(), d.getMinutes(), d.getSeconds()], Math.round(data[scope.metric])]);
-
+                    scope.data.addRow([ [d.getHours(), d.getMinutes(), d.getSeconds()], Math.round(data[scope.metric])]);
+                    
                     var rowCount = scope.data.getNumberOfRows();
                     if (rowCount < 20) {
                         scope.options.hAxis.baseline = [d.getHours(),
